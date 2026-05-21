@@ -46893,7 +46893,7 @@ import(${JSON.stringify(manifest.entry.module)});`;
         phone: "+91 98098 16264",
         github: "https://github.com/Azad-Aboobackar",
         linkedin: "https://www.linkedin.com/in/azad-aboobackar-589636323/",
-        resumeUrl: "https://customer-assets.emergentagent.com/job_66063fbb-37cd-4b74-8492-fd13fd226878/artifacts/93yr9ywj_Azad_Aboobackar_Resume.pdf",
+        resumeUrl: "/resume.pdf",
         photoUrl: "/profile.jpg",
         available: true,
         yearsCoding: 2,
