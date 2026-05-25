@@ -1,21 +1,29 @@
 /* Hide original skills */
-#skills { display: none !important; }
+#skills {
+    display: none !important;
+}
 
 /* Custom Skills Revamp */
 #custom-skills-revamp {
     position: relative;
-    padding: 8rem 0;
-    min-height: 100vh;
+    padding: 4rem 0 2rem 0 !important;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
     z-index: 10;
+    background: transparent !important; /* Blends seamlessly with white background */
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    max-width: 1400px !important;
+    box-sizing: border-box !important;
 }
 
 .quantum-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 1.5rem;
     position: relative;
     z-index: 20;
 }
@@ -26,7 +34,7 @@
     font-weight: 500;
     letter-spacing: -0.02em;
     color: #fff;
-    text-shadow: 0 0 20px rgba(0,0,0,0.8);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
 .quantum-header .highlight {
@@ -48,42 +56,57 @@
     transform-style: preserve-3d;
 }
 
-/* Background Galaxy Glow */
+/* Background Galaxy Glow - Multilayered Cosmic Nebulae on White */
 .quantum-container::after {
     content: '';
     position: absolute;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(232, 178, 122, 0.12) 0%, rgba(124, 92, 255, 0.06) 25%, transparent 55%);
+    width: 750px;
+    height: 750px;
+    background: radial-gradient(circle, 
+                                rgba(232, 178, 122, 0.08) 0%, 
+                                rgba(79, 54, 165, 0.05) 25%, 
+                                rgba(244, 63, 94, 0.02) 50%, 
+                                transparent 70%) !important;
     border-radius: 50%;
     z-index: -2;
     pointer-events: none;
     transform: translateZ(-200px);
 }
 
-/* The Core */
+/* The Core - Elegant Breathing Quantum Engine */
 .quantum-core {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle at 30% 30%, #fff 0%, #e8b27a 40%, #7c5cff 100%);
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #fef3c7 40%, #e8b27a 100%) !important;
     border-radius: 50%;
-    box-shadow: 0 0 50px rgba(232, 178, 122, 0.8), 0 0 100px rgba(124, 92, 255, 0.4), inset 0 0 20px #fff;
+    box-shadow: 0 10px 35px rgba(232, 178, 122, 0.4), 
+                0 4px 15px rgba(79, 54, 165, 0.15), 
+                inset 0 0 15px rgba(255, 255, 255, 0.9) !important;
     z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
-    color: #08080a;
-    font-size: 1.1rem;
+    color: #8c6239 !important; /* Premium deep bronze */
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
     animation: core-pulse 4s ease-in-out infinite alternate;
-    transform: translateZ(30px);
+    transform: translateZ(35px);
+    border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
 }
 
 @keyframes core-pulse {
-    0% { transform: translateZ(30px) scale(1); box-shadow: 0 0 40px rgba(232, 178, 122, 0.6), 0 0 80px rgba(124, 92, 255, 0.4), inset 0 0 20px #fff; }
-    100% { transform: translateZ(30px) scale(1.1); box-shadow: 0 0 60px rgba(232, 178, 122, 0.9), 0 0 120px rgba(124, 92, 255, 0.6), inset 0 0 30px #fff; }
+    0% {
+        transform: translateZ(35px) scale(1);
+        box-shadow: 0 8px 30px rgba(232, 178, 122, 0.3), 0 4px 12px rgba(79, 54, 165, 0.1), inset 0 0 15px rgba(255,255,255,0.9) !important;
+    }
+
+    100% {
+        transform: translateZ(35px) scale(1.06);
+        box-shadow: 0 12px 45px rgba(232, 178, 122, 0.45), 0 6px 20px rgba(79, 54, 165, 0.2), inset 0 0 20px rgba(255,255,255,0.9) !important;
+    }
 }
 
 /* Orbital System */
@@ -100,9 +123,9 @@
     top: 50%;
     left: 50%;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top-color: rgba(232, 178, 122, 0.3);
-    border-bottom-color: rgba(124, 92, 255, 0.3);
+    border: 1px dashed rgba(0, 0, 0, 0.08) !important; /* Elegant dashed stardust pathway */
+    border-top: 1.5px dashed rgba(232, 178, 122, 0.5) !important; /* Glowing gold highlights */
+    border-bottom: 1.5px dashed rgba(79, 54, 165, 0.4) !important; /* Glowing indigo highlights */
     transform-style: preserve-3d;
     width: calc(var(--ring-radius) * 2px);
     height: calc(var(--ring-radius) * 2px);
@@ -110,14 +133,22 @@
     margin-top: calc(var(--ring-radius) * -1px);
     animation: orbit-spin var(--speed) linear infinite;
     will-change: transform;
+    transition: border-color 0.4s ease, border-width 0.4s ease;
+}
+
+.orbit-ring:hover {
+    border-color: rgba(232, 178, 122, 0.25) !important;
 }
 
 @keyframes orbit-spin {
-    from { transform: rotateZ(0deg); }
-    to { transform: rotateZ(360deg); }
-}
+    from {
+        transform: rotateZ(0deg);
+    }
 
-/* Animations run continuously (pause removed based on user request) */
+    to {
+        transform: rotateZ(360deg);
+    }
+}
 
 /* The Satellite Node */
 .satellite {
@@ -136,46 +167,74 @@
     will-change: transform;
 }
 
+
+
 /* Inner rings counter-rotate */
 .orbit-ring.reverse {
     animation-direction: reverse;
 }
+
 .orbit-ring.reverse .satellite-wrapper {
     animation-direction: reverse;
 }
 
 @keyframes counter-spin {
-    from { transform: rotateZ(0deg) rotateX(-65deg); }
-    to { transform: rotateZ(-360deg) rotateX(-65deg); }
+    from {
+        transform: rotateZ(0deg) rotateX(-65deg);
+    }
+
+    to {
+        transform: rotateZ(-360deg) rotateX(-65deg);
+    }
 }
 
-/* The Content inside the satellite that faces camera */
+/* The Content inside the satellite - Elegant High-Performance Pill with Active Dots */
 .satellite-content {
     position: absolute;
     transform: translate(-50%, -50%);
-    display: flex; justify-content: center; align-items: center;
-    padding: 10px 20px;
-    background: rgba(10, 10, 15, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #ffffff;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Room for active indicator dot */
+    padding: 8px 18px;
+    background: linear-gradient(135deg, #ffffff 0%, #fdfcf9 100%) !important; /* Solid premium white-to-cream paper gradient */
+    border: 1px solid rgba(232, 178, 122, 0.15) !important;
+    color: #27272a !important; /* Premium readable light mode text */
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
     white-space: nowrap;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: default;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.9), inset 0 0 10px rgba(232, 178, 122, 0.15);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03), inset 0 0 8px rgba(255, 255, 255, 0.8) !important;
+    text-shadow: none !important;
+    will-change: transform, opacity; /* GPU hardware layer promotion */
+}
+
+/* Glowing Active Dot Indicator */
+.satellite-content::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #e8b27a; /* Amber-gold indicator */
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 6px rgba(232, 178, 122, 0.8);
+    flex-shrink: 0;
 }
 
 .satellite-content:hover {
-    background: linear-gradient(135deg, rgba(232, 178, 122, 0.2), rgba(232, 178, 122, 0.05));
-    border-color: rgba(232, 178, 122, 0.6);
-    color: #fff;
-    box-shadow: 0 0 25px rgba(232, 178, 122, 0.4), inset 0 0 10px rgba(232, 178, 122, 0.2);
-    transform: translate(-50%, -50%) scale(1.25) translateZ(10px);
+    background: #ffffff !important;
+    border-color: rgba(232, 178, 122, 0.6) !important; /* Gold border on hover */
+    color: #8c6239 !important; /* Premium deep bronze on hover */
+    box-shadow: 0 10px 24px rgba(232, 178, 122, 0.15) !important;
+    transform: translate(-50%, -50%) scale(1.12) translateZ(25px) !important;
     z-index: 100;
+}
+
+.satellite-content:hover::before {
+    background: #e8b27a; /* Remains amber-gold indicator on hover */
+    box-shadow: 0 0 10px rgba(232, 178, 122, 1);
 }
 
 /* Optional responsive adjustments */

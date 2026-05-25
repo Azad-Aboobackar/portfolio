@@ -40204,21 +40204,48 @@ import(${JSON.stringify(manifest.entry.module)});`;
             return;
           }
           setSending(true);
-          setTimeout(() => {
+          fetch('https://formsubmit.co/ajax/azadaboobackar0@gmail.com', {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              name: form.name,
+              email: form.email,
+              message: form.message,
+              _subject: "New Message from Portfolio"
+            })
+          }).then(response => {
+            if (!response.ok) {
+              throw new Error("HTTP error " + response.status);
+            }
+            return response.json();
+          }).then(data => {
+            if (data.success === "false" || data.success === false) {
+              throw new Error(data.message || "FormSubmit error");
+            }
+            sonner__WEBPACK_IMPORTED_MODULE_9__.toast.success("Message sent. I'll get back to you soon.");
+            
+            // Save message to localStorage
             const stored = JSON.parse(localStorage.getItem("contact_messages") || "[]");
             stored.push({
               ...form,
               ts: new Date().toISOString()
             });
             localStorage.setItem("contact_messages", JSON.stringify(stored));
-            sonner__WEBPACK_IMPORTED_MODULE_9__.toast.success("Message sent. I'll get back to you soon.");
+            
             setForm({
               name: "",
               email: "",
               message: ""
             });
             setSending(false);
-          }, 800);
+          }).catch(error => {
+            console.log("Email error:", error);
+            sonner__WEBPACK_IMPORTED_MODULE_9__.toast.error("Email not sent. Try again.");
+            setSending(false);
+          });
         };
         return /*#__PURE__*/(0, react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxDEV)("section", {
           id: "contact",
@@ -44141,7 +44168,12 @@ import(${JSON.stringify(manifest.entry.module)});`;
         (0, react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
           const onScroll = () => {
             setScrolled(window.scrollY > 24);
-            const sections = _mock__WEBPACK_IMPORTED_MODULE_1__.navItems.map(n => document.getElementById(n.id));
+            const sections = _mock__WEBPACK_IMPORTED_MODULE_1__.navItems.map(n => {
+              if (n.id === "skills") {
+                return document.getElementById("custom-skills-revamp") || document.getElementById("skills");
+              }
+              return document.getElementById(n.id);
+            });
             const y = window.scrollY + window.innerHeight / 3;
             for (let i = sections.length - 1; i >= 0; i--) {
               const s = sections[i];
@@ -44159,7 +44191,8 @@ import(${JSON.stringify(manifest.entry.module)});`;
         const go = id => {
           var _document$getElementB;
           setOpen(false);
-          (_document$getElementB = document.getElementById(id)) === null || _document$getElementB === void 0 ? void 0 : _document$getElementB.scrollIntoView({
+          const targetId = id === "skills" && document.getElementById("custom-skills-revamp") ? "custom-skills-revamp" : id;
+          (_document$getElementB = document.getElementById(targetId)) === null || _document$getElementB === void 0 ? void 0 : _document$getElementB.scrollIntoView({
             behavior: "smooth",
             block: "start"
           });
