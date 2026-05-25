@@ -763,6 +763,13 @@
             box-sizing: border-box !important;
         }
 
+        @media (max-width: 768px) {
+            section {
+                padding-left: 1.25rem !important; /* Elegant compact side paddings on mobile to maximize readable width */
+                padding-right: 1.25rem !important;
+            }
+        }
+
         /* Project Cards Alignment Overrides */
         div.bg-\[\#0c0c10\].border-\[\#2a2a32\].rounded-\[32px\] {
             max-width: 1400px !important; /* Expanded card width to align with sections */
@@ -949,6 +956,27 @@
         [data-sonner-toaster] [data-sonner-toast] [data-title],
         [data-sonner-toaster] [data-sonner-toast] [data-description] {
             color: inherit !important;
+        }
+
+        /* High-End Responsive Mobile Scaling for WhatsApp floating action button */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 1.5rem !important;
+                right: 1.5rem !important;
+                width: 3.2rem !important;
+                height: 3.2rem !important;
+                box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3), 
+                            0 4px 10px rgba(0, 0, 0, 0.1) !important;
+            }
+            .whatsapp-float svg {
+                width: 1.8rem !important;
+                height: 1.8rem !important;
+            }
+            .whatsapp-tooltip {
+                right: 4.2rem !important;
+                font-size: 0.8rem !important;
+                padding: 0.5rem 0.8rem !important;
+            }
         }
     </style>
     <link rel="stylesheet" href="/skills-revamp.css" />
