@@ -1026,6 +1026,42 @@
         [data-sonner-toaster] [data-sonner-toast] [data-description] {
             color: inherit !important;
         }
+
+        /* ==========================================================================
+           PREMIUM MOBILE RESPONSIVENESS OVERRIDES (Oppo A53s 5G & Portrait Screens)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            /* 1. Reduce excessive section padding from 3rem (48px) to 1.25rem (20px) to maximize screen width */
+            section {
+                padding-left: 1.25rem !important;
+                padding-right: 1.25rem !important;
+            }
+
+            /* 2. Fix scrolled navbar width to align symmetrically with the new section padding */
+            header > div {
+                max-width: calc(100% - 2.5rem) !important;
+            }
+
+            /* 3. Allow Hero typewriter flex container to wrap on mobile, preventing horizontal layout shift */
+            div.display.text-\[clamp\(3rem\,7\.5vw\,6\.5rem\)\] > div.flex {
+                white-space: normal !important;
+                flex-wrap: wrap !important;
+            }
+
+            /* 4. Stack the project card metrics vertically to give '100%' and descriptions plenty of room */
+            div.bg-\[\#0c0c10\] div.grid.grid-cols-3 {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            /* 5. Fluidly scale down the hero title font-size so it stays extremely sleek and fully within screen boundaries */
+            .text-\[clamp\(3rem\,7\.5vw\,6\.5rem\)\] {
+                font-size: clamp(1.85rem, 6vw, 2.5rem) !important;
+                line-height: 1.1 !important;
+            }
+        }
     </style>
     <link rel="stylesheet" href="/skills-revamp.css" />
 </head>

@@ -257,3 +257,11 @@
         height: 400px;
     }
 }
+
+@media (max-width: 480px) {
+    /* Scale down even further on extremely narrow viewports (e.g. Oppo A53s 5G) to ensure no clipping */
+    .quantum-container {
+        transform: scale(0.46) !important;
+        height: 330px !important;
+    }
+}
