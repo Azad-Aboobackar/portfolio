@@ -1042,10 +1042,13 @@
                 max-width: calc(100% - 2.5rem) !important;
             }
 
-            /* 3. Allow Hero typewriter flex container to wrap on mobile, preventing horizontal layout shift */
+            /* 3. Enforce strictly single-line text layout for the Hero typewriter container and all its children */
             div.display.text-\[clamp\(3rem\,7\.5vw\,6\.5rem\)\] > div.flex {
-                white-space: normal !important;
-                flex-wrap: wrap !important;
+                white-space: nowrap !important;
+                flex-wrap: nowrap !important;
+            }
+            div.display.text-\[clamp\(3rem\,7\.5vw\,6\.5rem\)\] > div.flex * {
+                white-space: nowrap !important;
             }
 
             /* 4. Stack the project card metrics vertically to give '100%' and descriptions plenty of room */
@@ -1056,10 +1059,17 @@
         }
 
         @media (max-width: 640px) {
-            /* 5. Fluidly scale down the hero title font-size so it stays extremely sleek and fully within screen boundaries */
+            /* 5. Fluidly scale down the hero title font-size so it stays extremely sleek and fully within screen boundaries without wrapping */
             .text-\[clamp\(3rem\,7\.5vw\,6\.5rem\)\] {
-                font-size: clamp(1.85rem, 6vw, 2.5rem) !important;
-                line-height: 1.1 !important;
+                font-size: clamp(1.4rem, 5.5vw, 2.2rem) !important;
+                line-height: 1.15 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* 6. Extra sizing reduction on extremely narrow portrait viewports (Oppo A53s 5G) to keep typewriter on a single line */
+            .text-\[clamp\(3rem\,7\.5vw\,6\.5rem\)\] {
+                font-size: clamp(1.2rem, 5.5vw, 1.7rem) !important;
             }
         }
     </style>
