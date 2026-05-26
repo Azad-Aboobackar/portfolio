@@ -40211,10 +40211,13 @@ import(${JSON.stringify(manifest.entry.module)});`;
               'Accept': 'application/json'
             },
             body: JSON.stringify({
+              "Website Source": "Azad Aboobackar Personal Portfolio",
               name: form.name,
               email: form.email,
               message: form.message,
-              _subject: "New Message from Portfolio"
+              _subject: "⚡ [Portfolio Contact] - Message from " + form.name,
+              _template: "box",
+              _color: "e8b27a"
             })
           }).then(response => {
             if (!response.ok) {
@@ -40672,7 +40675,7 @@ import(${JSON.stringify(manifest.entry.module)});`;
                         columnNumber: 19
                       }, undefined), /*#__PURE__*/(0, react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxDEV)(lucide_react__WEBPACK_IMPORTED_MODULE_8__["default"], {
                         size: 15,
-                        className: "group-hover:translate-x-1 transition-transform",
+                        className: "transition-transform " + (sending ? "paper-plane-flying" : "group-hover:translate-x-1"),
                         "x-file-name": "Contact",
                         "x-line-number": "75",
                         "x-column": "18",
