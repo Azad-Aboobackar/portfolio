@@ -13,7 +13,8 @@
     align-items: center;
     overflow: hidden;
     z-index: 10;
-    background: transparent !important; /* Blends seamlessly with white background */
+    background: transparent !important;
+    /* Blends seamlessly with white background */
     border: none !important;
     box-shadow: none !important;
     margin: 0 auto !important;
@@ -62,11 +63,11 @@
     position: absolute;
     width: 750px;
     height: 750px;
-    background: radial-gradient(circle, 
-                                rgba(232, 178, 122, 0.08) 0%, 
-                                rgba(79, 54, 165, 0.05) 25%, 
-                                rgba(244, 63, 94, 0.02) 50%, 
-                                transparent 70%) !important;
+    background: radial-gradient(circle,
+            rgba(232, 178, 122, 0.08) 0%,
+            rgba(79, 54, 165, 0.05) 25%,
+            rgba(244, 63, 94, 0.02) 50%,
+            transparent 70%) !important;
     border-radius: 50%;
     z-index: -2;
     pointer-events: none;
@@ -80,16 +81,17 @@
     height: 90px;
     background: radial-gradient(circle at 35% 35%, #ffffff 0%, #fef3c7 40%, #e8b27a 100%) !important;
     border-radius: 50%;
-    box-shadow: 0 10px 35px rgba(232, 178, 122, 0.4), 
-                0 4px 15px rgba(79, 54, 165, 0.15), 
-                inset 0 0 15px rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 10px 35px rgba(232, 178, 122, 0.4),
+        0 4px 15px rgba(79, 54, 165, 0.15),
+        inset 0 0 15px rgba(255, 255, 255, 0.9) !important;
     z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
-    color: #8c6239 !important; /* Premium deep bronze */
+    color: #8c6239 !important;
+    /* Premium deep bronze */
     font-size: 0.85rem;
     letter-spacing: 0.12em;
     animation: core-pulse 4s ease-in-out infinite alternate;
@@ -100,12 +102,12 @@
 @keyframes core-pulse {
     0% {
         transform: translateZ(35px) scale(1);
-        box-shadow: 0 8px 30px rgba(232, 178, 122, 0.3), 0 4px 12px rgba(79, 54, 165, 0.1), inset 0 0 15px rgba(255,255,255,0.9) !important;
+        box-shadow: 0 8px 30px rgba(232, 178, 122, 0.3), 0 4px 12px rgba(79, 54, 165, 0.1), inset 0 0 15px rgba(255, 255, 255, 0.9) !important;
     }
 
     100% {
         transform: translateZ(35px) scale(1.06);
-        box-shadow: 0 12px 45px rgba(232, 178, 122, 0.45), 0 6px 20px rgba(79, 54, 165, 0.2), inset 0 0 20px rgba(255,255,255,0.9) !important;
+        box-shadow: 0 12px 45px rgba(232, 178, 122, 0.45), 0 6px 20px rgba(79, 54, 165, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.9) !important;
     }
 }
 
@@ -123,9 +125,12 @@
     top: 50%;
     left: 50%;
     border-radius: 50%;
-    border: 1px dashed rgba(0, 0, 0, 0.08) !important; /* Elegant dashed stardust pathway */
-    border-top: 1.5px dashed rgba(232, 178, 122, 0.5) !important; /* Glowing gold highlights */
-    border-bottom: 1.5px dashed rgba(79, 54, 165, 0.4) !important; /* Glowing indigo highlights */
+    border: 1px dashed rgba(0, 0, 0, 0.08) !important;
+    /* Elegant dashed stardust pathway */
+    border-top: 1.5px dashed rgba(232, 178, 122, 0.5) !important;
+    /* Glowing gold highlights */
+    border-bottom: 1.5px dashed rgba(79, 54, 165, 0.4) !important;
+    /* Glowing indigo highlights */
     transform-style: preserve-3d;
     width: calc(var(--ring-radius) * 2px);
     height: calc(var(--ring-radius) * 2px);
@@ -194,11 +199,14 @@
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
-    gap: 8px; /* Room for active indicator dot */
+    gap: 8px;
+    /* Room for active indicator dot */
     padding: 8px 18px;
-    background: linear-gradient(135deg, #ffffff 0%, #fdfcf9 100%) !important; /* Solid premium white-to-cream paper gradient */
+    background: linear-gradient(135deg, #ffffff 0%, #fdfcf9 100%) !important;
+    /* Solid premium white-to-cream paper gradient */
     border: 1px solid rgba(232, 178, 122, 0.15) !important;
-    color: #27272a !important; /* Premium readable light mode text */
+    color: #27272a !important;
+    /* Premium readable light mode text */
     border-radius: 99px;
     font-size: 0.85rem;
     font-family: 'Space Grotesk', sans-serif;
@@ -208,7 +216,8 @@
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03), inset 0 0 8px rgba(255, 255, 255, 0.8) !important;
     text-shadow: none !important;
-    will-change: transform, opacity; /* GPU hardware layer promotion */
+    will-change: transform, opacity;
+    /* GPU hardware layer promotion */
 }
 
 /* Glowing Active Dot Indicator */
@@ -216,7 +225,8 @@
     content: '';
     width: 6px;
     height: 6px;
-    background: #e8b27a; /* Amber-gold indicator */
+    background: #e8b27a;
+    /* Amber-gold indicator */
     border-radius: 50%;
     transition: all 0.3s ease;
     box-shadow: 0 0 6px rgba(232, 178, 122, 0.8);
@@ -225,43 +235,25 @@
 
 .satellite-content:hover {
     background: #ffffff !important;
-    border-color: rgba(232, 178, 122, 0.6) !important; /* Gold border on hover */
-    color: #8c6239 !important; /* Premium deep bronze on hover */
+    border-color: rgba(232, 178, 122, 0.6) !important;
+    /* Gold border on hover */
+    color: #8c6239 !important;
+    /* Premium deep bronze on hover */
     box-shadow: 0 10px 24px rgba(232, 178, 122, 0.15) !important;
     transform: translate(-50%, -50%) scale(1.12) translateZ(25px) !important;
     z-index: 100;
 }
 
 .satellite-content:hover::before {
-    background: #e8b27a; /* Remains amber-gold indicator on hover */
+    background: #e8b27a;
+    /* Remains amber-gold indicator on hover */
     box-shadow: 0 0 10px rgba(232, 178, 122, 1);
 }
 
-/* Premium Responsive 3D Orbital Container Scaling Breakpoints (Fully Fluid Mobile Scaling) */
-@media (max-width: 1024px) {
-    .quantum-container {
-        transform: scale(0.85);
-        height: 600px;
-    }
-}
-
+/* Optional responsive adjustments */
 @media (max-width: 768px) {
     .quantum-container {
         transform: scale(0.6);
-        height: 420px;
-    }
-}
-
-@media (max-width: 480px) {
-    .quantum-container {
-        transform: scale(0.42);
-        height: 300px;
-    }
-}
-
-@media (max-width: 360px) {
-    .quantum-container {
-        transform: scale(0.36);
-        height: 260px;
+        height: 400px;
     }
 }
