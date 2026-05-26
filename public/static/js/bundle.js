@@ -47030,7 +47030,7 @@ import(${JSON.stringify(manifest.entry.module)});`;
         featured: true,
         links: {
           live: "https://youtu.be/MZkmv2eOIWw",
-          code: "https://github.com/Azad-Aboobackar"
+          code: "https://github.com/Azad-Aboobackar/first_project"
         }
       }];
       const experience = [{
